@@ -1,4 +1,4 @@
-# {{My}}_Plugin_Manager
+# {{my}}_Plugin_Manager
 
 [My Plugin Manager](http://mypluginmanager.com) is a drop-in script for your WordPress theme or plugin, which gives your users an interface to manage plugins you suggest be used with your product.
 
