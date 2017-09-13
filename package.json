@@ -1,0 +1,24 @@
+{
+  "name": "my-plugin-manager",
+  "version": "1.0.0",
+  "description": "A suggested plugin manager drop-in script for WordPress themes and plugins.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/themeblvd/my-plugin-manager.git"
+  },
+  "author": "Theme Blvd",
+  "license": "GNU General Public License v2 or later",
+  "bugs": {
+    "url": "https://github.com/themeblvd/my-plugin-manager/issues"
+  },
+  "homepage": "http://mypluginmanager.com",
+  "dependencies": {
+    "gulp": "latest",
+    "gulp-clean": "latest",
+    "gulp-replace": "latest"
+  }
+}
