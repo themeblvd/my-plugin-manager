@@ -1,0 +1,88 @@
+/* Table Structure */
+#suggested-plugins .column-compatible-version,
+#suggested-plugins .column-installed-version,
+#suggested-plugins .column-status {
+	width: 180px;
+}
+
+/* Row Marked "Incompatible" */
+#suggested-plugins .incompatible td,
+#suggested-plugins .incompatible th {
+	background-color: #fff8e5;
+}
+#suggested-plugins .incompatible .column-suggested-version,
+#suggested-plugins .incompatible .column-installed-version,
+#suggested-plugins .incompatible .column-status {
+	font-weight: bold;
+}
+#suggested-plugins .incompatible th.check-column {
+	border-left: 4px solid #ffb900;
+}
+.rtl #suggested-plugins .incompatible th.check-column {
+	border-left: none;
+	border-right: 4px solid #ffb900;
+}
+
+/* Row Ajax Update */
+#suggested-plugins td,
+#suggested-plugins th {
+	-webkit-transition: background-color .75s ease-in-out;
+	transition: background-color .75s ease-in-out;
+}
+#suggested-plugins .install-success td,
+#suggested-plugins .install-success th,
+#suggested-plugins .update-success td,
+#suggested-plugins .update-success th {
+	background-color: #ecf7ed;
+}
+#suggested-plugins .delete-success td,
+#suggested-plugins .delete-success th {
+	background-color: #fbeaea;
+}
+
+/* Row Notices */
+#suggested-plugins .row-has-notice td,
+#suggested-plugins .row-has-notice th {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+#suggested-plugins .row-notice td {
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	padding: 0;
+}
+#suggested-plugins .row-notice .notice {
+	margin: 0 20px 15px 40px;
+}
+.rtl #suggested-plugins .row-notice .notice {
+	margin-right: 40px;
+	margin-left: 20px;
+}
+#suggested-plugins .row-notice .notice p:before {
+	content: "\f534";
+}
+
+/* Row Actions */
+#suggested-plugins .row-actions {
+	line-height: 25px;
+}
+#suggested-plugins .updating-message .row-actions:before {
+	content: "\f463";
+	-webkit-animation: rotation 2s infinite linear;
+	animation: rotation 2s infinite linear;
+	color: #f56e28;
+	display: inline-block;
+	font: normal 20px/1 'dashicons';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-right: 2px;
+	vertical-align: top;
+}
+.rtl #suggested-plugins .updating-message .row-actions:before {
+	margin-right: 0;
+	margin-left: 2px;
+}
+#suggested-plugins .row-actions .no-link {
+	color: #666;
+}

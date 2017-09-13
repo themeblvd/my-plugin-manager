@@ -1,0 +1,71 @@
+/**
+ * Setup suggested plugin system.
+ *
+ * Include the {{My}}_Plugin_Manager class and add
+ * an interface for users to to manage suggested
+ * plugins.
+ *
+ * @since x.x.x
+ *
+ * @see  {{My}}_Plugin_Manager
+ * @link http://mypluginmanager.com
+ */
+function {{my}}_plugin_manager() {
+
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	/**
+	 * Include plugin manager class.
+	 *
+	 * No other includes are needed. The {{My}}_Plugin_Manager
+	 * class will handle including any other files needed.
+	 *
+	 * If you want to move the "plugin-manager" directory to
+	 * a different location within your child theme, that's
+	 * totally fine; just make sure you adjust this include
+	 * path to the plugin manager class accordingly.
+	 */
+	require_once( get_theme_file_path( '/plugin-manager/{{class-my-}}plugin-manager.php' ) );
+
+	// Setup suggested plugins.
+	$plugins = array(
+		array(
+			'name'    => 'Easy Digital Downloads',
+			'slug'    => 'easy-digital-downloads',
+			'version' => '2.8+',
+		),
+		array(
+			'name'    => 'JetPack',
+			'slug'    => 'jetpack',
+			'version' => '5.0+',
+		),
+		array(
+			'name'    => 'Gravity Forms',
+			'slug'    => 'gravityforms',
+			'version' => '2.2+',
+			'url'     => 'http://www.gravityforms.com', // Only for non wp.org plugins.
+		),
+	);
+
+	/*
+	 * Setup optional arguments for plugin manager interface.
+	 *
+	 * See the set_args() method of the {{My}}_Plugin_Manager
+	 * class for full documentation on what you can pass in here.
+	 */
+	$args = array(
+		'page_title'  => __( 'Suggested Plugins', '{{text-domain}}' ),
+		'menu_slug'   => '{{text-domain}}-suggested-plugins',
+		'child_theme' => true,
+	);
+
+	/*
+	 * Create plugin manager object, passing in the suggested
+	 * plugins and optional arguments.
+	 */
+	$manager = new {{My}}_Plugin_Manager( $plugins, $args );
+
+}
+add_action( 'after_setup_theme', '{{my}}_plugin_manager' );
