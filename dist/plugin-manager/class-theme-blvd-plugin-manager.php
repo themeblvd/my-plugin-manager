@@ -257,7 +257,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 			 * Include Theme_Blvd_Plugins class to store
 			 * plugin data.
 			 */
-			require_once( $this->package['directory'] . '/class-theme-blvdplugins.php' );
+			require_once( $this->package['directory'] . '/class-my-plugins.php' );
 
 			// Setup plugins.
 			$this->plugins = new Theme_Blvd_Plugins( $plugins, $this );
@@ -334,7 +334,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 			 * Include Theme_Blvd_Plugin_Notices class to setup
 			 * and display admin-wide notices, if they're needed.
 			 */
-			require_once( $this->package['directory'] . '/class-theme-blvdplugin-notices.php' );
+			require_once( $this->package['directory'] . '/class-my-plugin-notices.php' );
 
 			// Setup notices.
 			$args = array(

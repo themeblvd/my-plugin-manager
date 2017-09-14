@@ -1,6 +1,7 @@
-var gulp 	= require('gulp'),
-	clean	= require('gulp-clean'),
-	replace = require('gulp-replace');
+var gulp 	    = require('gulp'),
+	clean	    = require('gulp-clean'),
+	replace     = require('gulp-replace'),
+	replaceName = require('gulp-replace-name');
 
 /**
  * Variables used to generate custom
@@ -55,14 +56,13 @@ gulp.task('render-php-files', ['copy'], function() {
 
 	}
 
-
 	return gulp.src('src/plugin-manager/*.php')
 		.pipe(replace('my-text-domain', textDomain))
 		.pipe(replace('my_namespace', namespace))
 		.pipe(replace('_My', classPrefix))
-		.pipe(replace('class-my-', 'class-' + classFilePrefix))
 		.pipe(replace(findMenuSlug, replaceMenuSlug))
 		.pipe(replace(findAddMenu, replaceAddMenu))
+		.pipe(replaceName(/class-my-/g, 'class-' + classFilePrefix + '-'))
     	.pipe(gulp.dest('dist/plugin-manager'));
 
 });

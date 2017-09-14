@@ -19,6 +19,13 @@
   "dependencies": {
     "gulp": "latest",
     "gulp-clean": "latest",
-    "gulp-replace": "latest"
+    "gulp-replace": "latest",
+    "gulp-replace-name": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-clean": "latest",
+    "gulp-replace": "latest",
+    "gulp-replace-name": "^1.0.1"
   }
 }
