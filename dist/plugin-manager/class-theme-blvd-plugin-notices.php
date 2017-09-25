@@ -2,7 +2,7 @@
 /**
  * Plugin Manager Notices
  *
- * @version    1.0.0
+ * @version    1.0.1
  * @author     Jason Bobich, Theme Blvd
  * @copyright  2009-2017 Theme Blvd
  * @link       http://mypluginmanager.com

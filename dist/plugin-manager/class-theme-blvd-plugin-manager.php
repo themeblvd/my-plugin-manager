@@ -16,7 +16,7 @@
  * instantiating their objects. See more about class
  * in docs below.
  *
- * @version    1.0.0
+ * @version    1.0.1
  * @author     Jason Bobich, Theme Blvd
  * @copyright  2009-2017 Theme Blvd
  * @link       http://mypluginmanager.com
@@ -257,7 +257,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 			 * Include Theme_Blvd_Plugins class to store
 			 * plugin data.
 			 */
-			require_once( $this->package['directory'] . '/class-my-plugins.php' );
+			require_once( $this->package['directory'] . '/class-theme-blvd-plugins.php' );
 
 			// Setup plugins.
 			$this->plugins = new Theme_Blvd_Plugins( $plugins, $this );
@@ -334,7 +334,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 			 * Include Theme_Blvd_Plugin_Notices class to setup
 			 * and display admin-wide notices, if they're needed.
 			 */
-			require_once( $this->package['directory'] . '/class-my-plugin-notices.php' );
+			require_once( $this->package['directory'] . '/class-theme-blvd-plugin-notices.php' );
 
 			// Setup notices.
 			$args = array(

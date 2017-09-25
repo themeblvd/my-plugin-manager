@@ -62,6 +62,7 @@ gulp.task('render-php-files', ['copy'], function() {
 		.pipe(replace('_My', classPrefix))
 		.pipe(replace(findMenuSlug, replaceMenuSlug))
 		.pipe(replace(findAddMenu, replaceAddMenu))
+		.pipe(replace('class-my-', 'class-' + classFilePrefix + '-'))
 		.pipe(replaceName(/class-my-/g, 'class-' + classFilePrefix + '-'))
     	.pipe(gulp.dest('dist/plugin-manager'));
 
