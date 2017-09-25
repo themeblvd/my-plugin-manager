@@ -9,4 +9,4 @@ This example was generated with the following data:
 * Usage Type: `theme` &mdash; Could be `theme`, `child-theme` or `plugin`.
 * Theme Name: `Theme Blvd`
 * Namespace: `themeblvd`
-* Text Domain: `themeblvd`
+* Text Domain: `@@text-domain` &mdash; Would normally be like `themeblvd` or `theme-blvd`.

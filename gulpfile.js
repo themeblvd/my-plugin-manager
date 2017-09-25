@@ -7,10 +7,10 @@ var gulp 	    = require('gulp'),
  * Variables used to generate custom
  * distribution package.
  */
-var usage      = 'theme',      // `theme`, `child-theme` or `plugin`
-	themeName  = 'Theme Blvd', // Should be registered theme or plugin name.
-	namespace  = 'themeblvd',  // like `themeblvd` or `theme_blvd`
-	textDomain = 'themeblvd';  // like `themeblvd` or `theme-blvd`
+var usage      = 'theme',          // `theme`, `child-theme` or `plugin`
+	themeName  = 'Theme Blvd',     // Should be registered theme or plugin name.
+	namespace  = 'themeblvd',      // like `themeblvd` or `theme_blvd`
+	textDomain = '@@text-domain';  // like `themeblvd` or `theme-blvd`
 
 /**
  * Empty out distribution before compiling
