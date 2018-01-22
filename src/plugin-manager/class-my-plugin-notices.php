@@ -237,7 +237,7 @@ if ( ! class_exists( '_My_Plugin_Notices' ) ) {
 			wp_enqueue_script(
 				'my_namespace-plugin-notices',
 				esc_url( $this->args['package_url'] . "/assets/js/plugin-notices$suffix.js" ),
-				array( 'jquery', 'common' )
+				array( 'jquery' )
 			);
 
 		}

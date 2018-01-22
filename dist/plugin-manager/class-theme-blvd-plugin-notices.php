@@ -237,7 +237,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Notices' ) ) {
 			wp_enqueue_script(
 				'themeblvd-plugin-notices',
 				esc_url( $this->args['package_url'] . "/assets/js/plugin-notices$suffix.js" ),
-				array( 'jquery', 'common' )
+				array( 'jquery' )
 			);
 
 		}
