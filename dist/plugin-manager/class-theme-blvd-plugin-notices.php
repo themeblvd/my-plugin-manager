@@ -232,7 +232,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Notices' ) ) {
 				return;
 			}
 
-			$suffix = SCRIPT_DEBUG ? '' : '.min';
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 			wp_enqueue_script(
 				'themeblvd-plugin-notices',

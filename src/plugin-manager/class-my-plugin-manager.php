@@ -387,7 +387,7 @@ if ( ! class_exists( '_My_Plugin_Manager' ) ) {
 				return;
 			}
 
-			$suffix = SCRIPT_DEBUG ? '' : '.min';
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 			wp_enqueue_script( 'updates' );
 

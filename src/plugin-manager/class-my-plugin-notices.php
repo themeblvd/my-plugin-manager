@@ -232,7 +232,7 @@ if ( ! class_exists( '_My_Plugin_Notices' ) ) {
 				return;
 			}
 
-			$suffix = SCRIPT_DEBUG ? '' : '.min';
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 			wp_enqueue_script(
 				'my_namespace-plugin-notices',
