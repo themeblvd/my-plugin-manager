@@ -4,28 +4,38 @@
   "description": "A suggested plugin manager drop-in script for WordPress themes and plugins.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && gulp --gulpfile ./build/gulpfile.js",
+    "build:php": "gulp --gulpfile ./build/gulpfile.js build-php",
+    "build:css": "gulp --gulpfile ./build/gulpfile.js build-css",
+    "build:js:notices": "gulp --gulpfile ./build/gulpfile.js build-js-notices",
+    "build:js:manager": "gulp --gulpfile ./build/gulpfile.js build-js-manager",
+    "build:js": "gulp --gulpfile ./build/gulpfile.js build-js",
+    "clean": "gulp --gulpfile ./build/gulpfile.js clean"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/themeblvd/my-plugin-manager.git"
   },
-  "author": "Theme Blvd",
-  "license": "GNU General Public License v2 or later",
+  "author": "Jason Bobich",
+  "license": "GPL-2.0+",
   "bugs": {
     "url": "https://github.com/themeblvd/my-plugin-manager/issues"
   },
   "homepage": "http://mypluginmanager.com",
-  "dependencies": {
-    "gulp": "latest",
-    "gulp-clean": "latest",
-    "gulp-replace": "latest",
-    "gulp-replace-name": "^1.0.1"
-  },
   "devDependencies": {
-    "gulp": "latest",
-    "gulp-clean": "latest",
-    "gulp-replace": "latest",
-    "gulp-replace-name": "^1.0.1"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-replace-name": "^1.0.1",
+    "gulp-sass": "^4.0.1",
+    "unminified-webpack-plugin": "^2.0.0",
+    "webpack": "^4.16.2",
+    "webpack-stream": "^5.0.0"
   }
 }
