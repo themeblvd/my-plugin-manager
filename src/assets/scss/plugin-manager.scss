@@ -1,0 +1,105 @@
+//
+// Variables
+//
+
+$clr-success-bg: #ecf7ed;
+$clr-delete-bg: #fbeaea;
+$clr-incompatible-bg: #fff8e5;
+$clr-incompatible-border: #ffb900;
+
+//
+// Table Structure
+//
+
+#suggested-plugins {
+  .column-compatible-version,
+  .column-installed-version,
+  .column-status {
+    width: 180px;
+  }
+
+  // Row Marked "Incompatible"
+  .incompatible td,
+  .incompatible th {
+    background-color: $clr-incompatible-bg;
+  }
+  .incompatible .column-suggested-version,
+  .incompatible .column-installed-version,
+  .incompatible .column-status {
+    font-weight: bold;
+  }
+  .incompatible th.check-column {
+    border-left: 4px solid $clr-incompatible-border;
+  }
+
+  // Row Ajax Update
+  td,
+  th {
+    transition: background-color 0.75s ease-in-out;
+  }
+  .install-success td,
+  .install-success th,
+  .update-success td,
+  .update-success th {
+    background-color: $clr-success-bg;
+  }
+  .delete-success td,
+  .delete-success th {
+    background-color: $clr-delete-bg;
+  }
+
+  // Row Notices
+  .row-has-notice td,
+  .row-has-notice th {
+    box-shadow: none;
+  }
+  .row-notice td {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 0;
+  }
+  .row-notice .notice {
+    margin: 0 20px 15px 40px;
+  }
+  .row-notice .notice p:before {
+    content: '\f534';
+  }
+
+  // Row Actions
+  .row-actions {
+    line-height: 25px;
+  }
+  .updating-message .row-actions:before {
+    content: '\f463';
+    animation: rotation 2s infinite linear;
+    color: #f56e28;
+    display: inline-block;
+    font: normal 20px/1 'dashicons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 2px;
+    vertical-align: top;
+  }
+  .row-actions .no-link {
+    color: #666;
+  }
+}
+
+//
+// RTL
+//
+
+.rtl #suggested-plugins {
+  .incompatible th.check-column {
+    border-left: none;
+    border-right: 4px solid $clr-incompatible-border;
+  }
+  .row-notice .notice {
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+  .updating-message .row-actions:before {
+    margin-right: 0;
+    margin-left: 2px;
+  }
+}
