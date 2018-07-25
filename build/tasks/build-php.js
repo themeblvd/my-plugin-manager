@@ -1,33 +1,29 @@
 const gulp = require('gulp');
 const replace = require('gulp-replace');
 const replaceName = require('gulp-replace-name');
-const { usage, theme, namespace, i18n } = require('../example');
+const { classPrefix, classFilePrefix } = require('../utils');
+const { usage, name, namespace, textDomain } = require('../../build-config');
 
 function buildPhp() {
-  let classPrefix = theme.replace(/ /gi, '_');
-  let classFilePrefix = classPrefix.toLowerCase().replace(/_/gi, '-');
+  const menuSlug = {
+    find: usage === 'plugin' ? 'themes.php' : '',
+    replace: usage === 'plugin' ? 'plugins.php' : ''
+  };
 
-  let findMenuSlug = '';
-  let replaceMenuSlug = '';
-  let findAddMenu = '';
-  let replaceAddMenu = '';
-
-  if (usage === 'plugin') {
-    findMenuSlug = 'themes.php';
-    replaceMenuSlug = 'plugins.php';
-    findAddMenu = 'add_theme_page(';
-    replaceAddMenu = "add_submenu_page(\n\t\t\t\t$this->args['parent_slug'],";
-  }
+  const addMenu = {
+    find: usage === 'plugin' ? 'add_theme_page(' : '',
+    replace: usage === 'plugin' ? "add_submenu_page(\n\t\t\t\t$this->args['parent_slug']," : ''
+  };
 
   return gulp
     .src('../src/*.php')
-    .pipe(replace('my-text-domain', i18n))
+    .pipe(replace('my-text-domain', textDomain))
     .pipe(replace('my_namespace', namespace))
-    .pipe(replace('_My', classPrefix))
-    .pipe(replace(findMenuSlug, replaceMenuSlug))
-    .pipe(replace(findAddMenu, replaceAddMenu))
-    .pipe(replace('class-my-', 'class-' + classFilePrefix + '-'))
-    .pipe(replaceName(/class-my-/g, 'class-' + classFilePrefix + '-'))
+    .pipe(replace('_My', classPrefix(name)))
+    .pipe(replace(menuSlug.find, menuSlug.replace))
+    .pipe(replace(addMenu.find, addMenu.replace))
+    .pipe(replace('class-my-', classFilePrefix(name)))
+    .pipe(replaceName(/class-my-/g, classFilePrefix(name)))
     .pipe(gulp.dest('../dist/plugin-manager'));
 }
 

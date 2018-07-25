@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "npm run clean && gulp --gulpfile ./build/gulpfile.js",
+    "build:example": "gulp --gulpfile ./build/gulpfile.js build-example",
     "build:php": "gulp --gulpfile ./build/gulpfile.js build-php",
     "build:css": "gulp --gulpfile ./build/gulpfile.js build-css",
     "build:js:notices": "gulp --gulpfile ./build/gulpfile.js build-js-notices",
