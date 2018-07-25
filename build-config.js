@@ -23,7 +23,7 @@
  * 2. `child-theme` - Using with child theme.
  * 3. `plugin` - Using with plugin.
  *
- * @var {string}
+ * @type {string}
  */
 const usage = 'theme';
 
@@ -33,7 +33,7 @@ const usage = 'theme';
  * This should match the name in your theme's style.css
  * or the name in your main plugin file.
  *
- * @var {string}
+ * @type {string}
  */
 const name = 'Theme Blvd';
 
@@ -41,7 +41,7 @@ const name = 'Theme Blvd';
  * Namespace value you're using for your PHP functions,
  * like `themeblvd` or `theme_blvd`
  *
- * @var {string}
+ * @type {string}
  */
 const namespace = 'themeblvd';
 
@@ -59,7 +59,7 @@ const namespace = 'themeblvd';
  * framework PHP code with the proper value cooresponding
  * to the current theme.
  *
- * @var {string}
+ * @type {string}
  */
 const textDomain = '@@text-domain';
 
