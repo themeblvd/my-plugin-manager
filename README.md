@@ -33,10 +33,10 @@ For using this repository to generate a custom build, you'll need to have [NodeJ
 
 1. Clone this repository to your local computer.
 2. Edit the variables in `build-config.js` to match your project.
-4. Within the clone repo, run `npm install` to install all of dependencies from your terminal.
-5. Then run `npm run build` to build out a custom build for your project, using data from the `build-config.js` you edited.
-6. Within the `/dist` directory, find the `plugin-manager` directory that was generated, and then copy it to the root of your WordPress theme or plugin.
-7. Also within the `/dist` directory you'll see an `example.php` file. You can copy the contents of this file into your theme or plugin's PHP code to implement the script.
+4. Within the cloned repo, run `npm install` to install all of dependencies from your terminal.
+5. Then run `npm run build` to generate a custom build specific to your project, using data from the `build-config.js` you edited.
+6. Within the `/dist` directory, find the `plugin-manager` directory that was generated and copy it to the root of your WordPress theme or plugin.
+7. Also within the `/dist` directory you'll see an `example.php` file. You can copy the contents of this file into your theme or plugin's PHP code as a starting point to implement the script.
 
 ## More Information
 
