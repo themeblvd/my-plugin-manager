@@ -152,7 +152,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 			add_filter( 'views_plugin-install', array( $this, 'add_install_view' ) );
 
 			// Hook Ajax requests.
-			add_action( 'wp_ajax_plugin-manager-row-refresh', array( $this, 'row_refresh' ) );
+			add_action( 'wp_ajax_themeblvd-row-refresh', array( $this, 'row_refresh' ) );
 
 			// Hook non-Ajax requests.
 			add_action( 'current_screen', array( $this, 'request' ) );
@@ -432,7 +432,7 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 
 				<?php if ( $plugins ) : ?>
 
-					<form method="post" id="bulk-action-form" data-namespace="themeblvd">
+					<form method="post" id="bulk-action-form">
 
 						<?php $this->display_table_nav( 'top' ); ?>
 
@@ -1068,23 +1068,6 @@ if ( ! class_exists( 'Theme_Blvd_Plugin_Manager' ) ) {
 		 * @since 1.0.0
 		 */
 		public function row_refresh() {
-
-			/*
-			 * Check to make sure this action belongs to current
-			 * object.
-			 *
-			 * This may seem a bit weird. - Because of how we generate
-			 * the package files for authors, we're keeping the ajax action
-			 * generically named `plugin-manager-row-refresh`.
-			 *
-			 * So, in the event multiple instances of our generated objects
-			 * have hooked to `wp_ajax_plugin-manager-row-refresh`,
-			 * we'll double check the namespace to make sure the right
-			 * object is used.
-			 */
-			if ( empty( $_POST['namespace'] ) || 'themeblvd' !== $_POST['namespace'] ) {
-				return;
-			}
 
 			check_ajax_referer( 'updates' );
 

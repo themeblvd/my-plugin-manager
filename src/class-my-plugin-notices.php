@@ -102,7 +102,7 @@ if ( ! class_exists( '_My_Plugin_Notices' ) ) {
 			add_action( 'admin_notices', array( $this, 'add_notices' ) );
 
 			// Handle notice dismissals through Ajax.
-			add_action( 'wp_ajax_plugin-manager-dismiss-notice', array( $this, 'dismiss' ) );
+			add_action( 'wp_ajax_my_namespace-dismiss-notice', array( $this, 'dismiss' ) );
 
 		}
 
@@ -308,23 +308,6 @@ if ( ! class_exists( '_My_Plugin_Notices' ) ) {
 		 * @since 1.0.0
 		 */
 		public function dismiss() {
-
-			/*
-			 * Check to make sure this action belongs to current
-			 * object.
-			 *
-			 * This may seem a bit weird. - Because of how we generate
-			 * the package files for authors, we're keeping the ajax action
-			 * generically named `plugin-manager-dismiss-notice`.
-			 *
-			 * So, in the event multiple instances of our generated objects
-			 * have hooked to `wp_ajax_plugin-manager-dismiss-notice`,
-			 * we'll double check the namespace to make sure the right
-			 * message gets dismissed.
-			 */
-			if ( empty( $_POST['namespace'] ) || 'my_namespace' !== $_POST['namespace'] ) {
-				return;
-			}
 
 			check_ajax_referer( 'plugin-manager-dismiss-notice_' . $_POST['notice_key'] );
 
