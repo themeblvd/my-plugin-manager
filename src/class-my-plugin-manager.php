@@ -16,7 +16,7 @@
  * instantiating their objects. See more about class
  * in docs below.
  *
- * @version    1.0.2
+ * @version    1.1.0
  * @author     Jason Bobich, Theme Blvd
  * @copyright  2009-2017 Theme Blvd
  * @link       http://mypluginmanager.com
