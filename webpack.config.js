@@ -13,7 +13,8 @@ module.exports = ({ entry, script }) => {
     mode: 'production',
     externals: {
       wp: 'wp',
-      jquery: 'jQuery'
+      jquery: 'jQuery',
+      settings: 'pluginManagerSettings'
     },
     module: {
       rules: [
