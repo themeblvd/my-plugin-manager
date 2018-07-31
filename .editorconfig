@@ -1,13 +1,19 @@
-[**/*.js]
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
+max_line_length = 100
 quote_type = single
-max_line_length = 100
 
-[**/*.scss]
-indent_size = 2
-max_line_length = 100
+[**/*.php]
+indent_style = tab
+indent_size = 4
+max_line_length = 200
 
 [*.{json,babelrc}]
-indent_size = 2
 max_line_length = 200
